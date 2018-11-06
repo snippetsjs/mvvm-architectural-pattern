@@ -1,14 +1,24 @@
 import store from '../store';
 
-export default {
+const vm. () =>{
   template: `
   <div>
     <b>Componente para editar...</b>
   </div>
   `,
-  computed:{
-    contato(){
-      return store.state.contatos;
+  mounted(){
+    this.setarContato(store.state.contatos);
+  },
+  data(){
+    return {
+      mockContato: {
+
+      }
+    }
+  },
+  methods: {
+    setarContato(){
+
     }
   }
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "candidato 1",
+    "email": "candidato1@hotmail.com",
+    "telefone": "0000001",
+    "foto": ""
+  },
+  {
+    "id": 2,
+    "nome": "candidato 2",
+    "email": "candidato2@hotmail.com",
+    "telefone": "0000002",
+    "foto": ""
+  },
+  {
+    "id": 3,
+    "nome": "candidato 3",
+    "email": "candidato3@hotmail.com",
+    "telefone": "0000003",
+    "foto": ""
+  }
+]
