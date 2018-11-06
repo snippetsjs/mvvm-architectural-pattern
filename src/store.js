@@ -41,8 +41,8 @@ const actions = {
 export default new Vuex.Store({
     state,
     getters: {
-        timesLibertadores: state => state.contatos.slice(0, 6),
-        timesRebaixados: state => state.contatos.slice(16, 20),
+        // return 6 primeiros
+        primeirosContatos: state => state.contatos.slice(0, 6),
     },
     mutations,
     actions

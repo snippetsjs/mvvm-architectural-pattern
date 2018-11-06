@@ -14,7 +14,7 @@ export default {
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="(contato,index) in contatosFiltrados" :class="{'success': index < 3, 'warning': index > 2 && index <6, 'danger': index > 15}">
+                <tr v-for="(contato,index) in contatosFiltrado" :class="{'success': index < 3, 'warning': index > 2 && index <6, 'danger': index > 15}">
                     <td>
                       <img :src="contato.foto" style="height: 30px; width: 30px;">
                       <strong>{{contato.nome}}</strong>
@@ -50,7 +50,7 @@ export default {
         return store.state.contatos;
         //return this.$store.state.times;
       },
-      contatosFiltrados(){
+      contatosFiltrado(){
         let colecao = _.orderBy(this.contatos, this.order.keys, this.order.sort);
 
         return _.filter(colecao, item => {
