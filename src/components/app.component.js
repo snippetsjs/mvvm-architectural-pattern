@@ -1,19 +1,19 @@
 import store from '../store';
-import ListContacts from './list-contacts.component'
+import ListarContatos from './listar-contatos.component'
 
 export default {
   components: {
-    'list-contacts': ListContacts
+    'listar-contatos': ListarContatos
   },
   template: `
     <div class="container">
       <div class="row">
-        <h3>Contacts</h3>
+        <h3> ... </h3>
           <a class="btn btn-success" @click="listarContatos">Listar Contatos</a>
           <a class="btn btn-primary" @click="editarContato">Editar Contatos</a>
         <br/><br/>
         <div v-show="screem == 'listar'">
-          <list-contacts></list-contacts>
+          <listar-contatos></listar-contatos>
         </div>
         <div v-if="screem == 'editar'">
           edit contacts

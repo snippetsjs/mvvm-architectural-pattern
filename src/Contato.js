@@ -1,13 +1,15 @@
-export class Time{
+export class Contato {
 
-    constructor(id, nome, escudo){
+    constructor(id, nome, email, telefone, escudo){
         this.id = id;
         this.nome = nome;
+        this.email = email,
+        this.telefone = telefone,
         this.escudo = escudo;
 
-        this.pontos = 0;
-        this.gm = 0;
-        this.gs = 0;
+        // this.pontos = 0;
+        // this.gm = 0;
+        // this.gs = 0;
     }
 
     updateInfo(pontos, golsMarcados, golsSofridos){
