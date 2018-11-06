@@ -1,24 +1,24 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueResource from 'vue-resource';
-import {Time} from './time';
+import { Contato } from './Contato';
 
 Vue.use(Vuex);
 Vue.use(VueResource);
 
 const state = {
     screem: 'listar',
-    times: []
+    contatos: []
 };
 
 const mutations = {
-    'set-times'(state, times){
-        state.times = times;
+    'setar-estado-contatos'(state, contatos){
+        state.contatos = contatos;
     },
     update(state, time){
-        let index = state.times.findIndex(element => time.id == element.id);
+        let index = state.contatos.findIndex(element => time.id == element.id);
         if (index != -1) {
-            state.times[index] = time;
+            state.contatos[index] = time;
         }
     },
     'exibir-listar-contatos'(state){
@@ -30,11 +30,10 @@ const mutations = {
 };
 
 const actions = {
-    'load-times'(context){
-        Vue.http.get('http://localhost:8080/dist/times.json').then(response => {
-            let times = response.data.map(element => new Time(element.id, element.nome, element.escudo));
-            console.log(times);
-            context.commit('set-times', times);
+    'carregar-estado-contatos'(context){
+        Vue.http.get('http://localhost:8080/dist/contacts.json').then(response => {
+            let contatos = response.data.map(obj => new Contato(obj.id, obj.nome, obj.email, obj.telefone, obj.foto));
+            context.commit('setar-estado-contatos', contatos);
         });
     }
 };
@@ -42,8 +41,8 @@ const actions = {
 export default new Vuex.Store({
     state,
     getters: {
-        timesLibertadores: state => state.times.slice(0, 6),
-        timesRebaixados: state => state.times.slice(16, 20),
+        // return 6 primeiros
+        primeirosContatos: state => state.contatos.slice(0, 6),
     },
     mutations,
     actions
