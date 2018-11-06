@@ -3,7 +3,7 @@ import store from '../store';
 export default {
   template: `
   <div>
-    <b>Teste</b>
+    <b>Componente para editar...</b>
   </div>
   `,
   computed:{
