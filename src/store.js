@@ -30,8 +30,8 @@ const mutations = {
 };
 
 const actions = {
-    'load-times'(context){
-        Vue.http.get('http://localhost:8080/dist/times.json').then(response => {
+    'carregar-estado-contatos'(context){
+        Vue.http.get('http://localhost:8080/dist/contacts.json').then(response => {
             let times = response.data.map(element => new Time(element.id, element.nome, element.escudo));
             console.log(times);
             context.commit('set-times', times);
